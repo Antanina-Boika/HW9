@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr auto 1.5fr;
+  background-color: rgb(230, 229, 244);
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.title {
+  text-align: center;
+  color: rgb(78, 69, 69);
+  margin: 30px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.nav_button {
+  background-color: darkseagreen;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: white;
+  padding: 10px 15px;
+  transition-duration: 1000ms;
+}
+
+.nav_button:hover {
+  transform: scale(1.5);
+  background-color: greenyellow;
+  color: black;
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, auto));
+  margin: 0px 40px;
+  grid-row-gap: 10px;
+  grid-column-gap: 30px;
+}
+
+.main_item {
+  background-color: rgb(84, 11, 130);
+  color: white;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 4s;
+  font-size: large;
+}
+
+.main_item:hover {
+  transform: rotate(360deg);
+}
+
+.footer {
+  position: relative;
+  grid-area: footer;
+  overflow: hidden;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  bottom: 40%;
+  animation-name: boll;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.circle:hover {
+  animation-play-state: paused;
+}
+
+@keyframes boll {
+  0% {
+    background-color: purple;
+  }
+  10% {
+    transform: translate(120px, -150px);
+    background-color: yellowgreen;
+  }
+
+  20% {
+    transform: translate(240px, 0px);
+    background-color: yellow;
+  }
+
+  30% {
+    transform: translate(360px, -150px);
+    background-color: green;
+  }
+
+  40% {
+    transform: translate(480px, 0px);
+    background-color: rgb(78, 162, 218);
+  }
+  50% {
+    transform: translate(600px, -150px);
+    background-color: blue;
+  }
+
+  60% {
+    transform: translate(720px, 0px);
+    background-color: rgb(228, 30, 228);
+  }
+  70% {
+    transform: translate(840px, -150px);
+    background-color: lightcoral;
+  }
+
+  80% {
+    transform: translate(960px, 0px);
+    background-color: brown;
+  }
+
+  90% {
+    transform: translate(1080px, -150px);
+    background-color: purple;
+  }
+
+  100% {
+    transform: translate(1150px, 0px);
+    background-color: blue;
+  }
+}
